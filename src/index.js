@@ -64,11 +64,17 @@ class App extends React.Component {
   }
 
   render() {
+    const onClick = () => store.dispatch({ type: 'TOGGLE '});
+
     return (
       <div>
         <h1>To-Do List</h1>
         <div>
-          Learn Redux
+          Learn Redux&nbsp;
+          <input
+            type="checkbox"
+            checked={!!this.state.checked} // cannot be toggled without the onClick method
+            onClick={onClick} /> // now checkbox can be toggled
         </div>
       </div>
 
